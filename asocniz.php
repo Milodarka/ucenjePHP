@@ -96,4 +96,109 @@ foreach ($osobe as $val=>$val_value)
     }
 
 }
+echo "<br>";
+/**2. Dat je niz elemenata u obliku
+
+NazivPredmeta/Ocena koju
+student ima.
+
+Ispisati sve predmete i ocene
+studenta.
+Odrediti najveću ocenu studenta
+koju ima, i ispisati predmete na
+kojima je dobio najveću ocenu.
+Odrediti prosečnu ocenu studenta i
+ispisati predmete na kojima je dobio
+ocenu veću od prosečne. */
+
+$fax = array ("20.vek" => "7", "NJegos" => "7", 
+"Opsta knjizevnost" => "8",
+ "Srednjovjekovna knjizevnost"=>"9", "Sintaksa padeza" =>"5",
+  "Engleski jezik"=> "10");
+$max=0;
+$vr = 0;
+  foreach ($fax as $x=>$x_value)
+  {
+    if ($max<$x_value)
+    {
+        $max=$x_value;
+        $vr=$x;
+        
+        
+    }
+  }
+  echo "predmet sa najvecom ocenom $vr <br> ";
+echo "maksimalna ocena je $max";
+
+echo "<br>";
+$zbir = 0;
+foreach ($fax as $x=>$x_value)
+  {
+    $zbir +=$x_value;
+  }
+echo " zbir ocena $zbir";
+echo "<br>";
+$srvr = $zbir/count($fax);
+echo "prosecna ocena je $srvr";
+echo "<br>";
+foreach ($fax as $x=>$x_value)
+{
+    if ($srvr<$x_value)
+    {
+        echo "predmeti sa ocenom vecom od prosecne $x";
+        echo "<br>";
+    }
+}
+echo "<br>";
+//sortiranje
+
+$visine = array ("Milica"=>"150","Milovan"=> "190", "Evica"=> "145",
+"Jovana"=> "200", "Dragan"=>"195","Vladan"=> "185");
+arsort($visine);
+foreach ($visine as $x=>$x_val)
+{
+    echo $x . "<br>";
+  
+}
+echo "<br>";
+
+/**napraviti asoc niz boja gde ce kljuc biti heksadec vrednost boje
+ * a vrednost odgo naziv boje.
+ sortirati
+ rastuce u odnosu na hex kod
+ opadajuce u odnosu na hex kod
+ rastuce u odnosu na naziv
+ opadajuce u odnosu na naziv
+ */
+$color = array("purple"=>"#640555","blue"=> "#171B6A", "grey"=> "#6C5A5F",
+"green"=> "#13F913", "red"=> "#F91313", "yellow"=>"#F9F913"
+);
+asort($color);
+
+foreach($color as $x=>$x_value)
+{
+    echo "<br>". $x_value;
+}
+echo "<br>";
+
+krsort($color);
+foreach($color as $x=>$x_value)
+{
+    echo "<br>". $x_value;
+}
+
+echo "<br>";
+
+ksort($color);
+foreach($color as $x=>$x_value)
+{
+    echo "<br>". $x;
+}
+
+echo "<br>";
+krsort($color);
+foreach($color as $x=>$x_value)
+{
+    echo "<br>". $x;
+}
 ?>
